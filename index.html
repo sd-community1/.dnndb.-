@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول النصوص الذكي</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 600px; text-align: center; }
+        h1 { color: #333; margin-bottom: 20px; }
+        textarea { width: 100%; height: 150px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; resize: vertical; font-size: 16px; box-sizing: border-box; }
+        button { background-color: #4CAF50; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 15px; transition: background 0.3s; }
+        button:hover { background-color: #45a049; }
+        .note { font-size: 12px; color: #777; margin-top: 10px; }
+        /* Loader styles */
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 20px; height: 20px; animation: spin 2s linear infinite; display: none; margin: 10px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>تحليل وتنظيم النصوص بالـ AI</h1>
+    <p>أدخل النص وسيقوم الذكاء الاصطناعي بتنسيقه وإضافة شروحات وتحويله لـ PDF.</p>
+    
+    <form action="/" method="post" onsubmit="document.querySelector('.loader').style.display='block'">
+        <textarea name="user_text" placeholder="اكتب النص هنا..." required></textarea>
+        <br>
+        <div class="loader"></div>
+        <button type="submit">تحويل وتحميل PDF</button>
+    </form>
+    <p class="note">يتم استخدام Google Gemini API للمعالجة.</p>
+</div>
+
+</body>
+</html>
